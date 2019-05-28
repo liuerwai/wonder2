@@ -12,10 +12,10 @@ public class DetailPage {
             "            <span class=\"name\">$name</span>\n" +
             "        </div>\n" +
             "        <div id=\"image\">\n" +
-            "            <img style=\"width: 350px; height: auto;\" src=\"$peoImg\">\n" +
+            "            <img style=\"width: 60%; height: auto;\" src=\"$peoImg\">\n" +
             "        </div>\n" +
             "        <div id=\"data\" style=\"margin: 15px;\">\n" +
-            "            <div style=\"background-color: #dddddd;width: 350px; height: 350px;\">\n" +
+            "            <div style=\"width: 350px; height: 350px;\">\n" +
             "                <li><span>生日</span>$birth</li>\n" +
             "                <li><span>身高</span>$height cm</li>\n" +
             "                <li><span>胸围</span>$chest cm</li>\n" +
@@ -34,10 +34,10 @@ public class DetailPage {
             "            <span class=\"name\">$name</span>\n" +
             "        </div>\n" +
             "        <div id=\"image\">\n" +
-            "            <img style=\"width: 350px; height: auto;\" src=\"$peoImg\">\n" +
+            "            <img style=\"width: 60%; height: auto;\" src=\"$peoImg\">\n" +
             "        </div>\n" +
             "        <div id=\"data\" style=\"margin: 15px;\">\n" +
-            "            <div style=\"background-color: #dddddd;width: 350px; height: 350px;\">\n" +
+            "            <div style=\"width: 350px; height: 350px;\">\n" +
             "                <li><span>BIRTHDAY</span>$birth</li>\n" +
             "                <li><span>HEIHT</span>$height cm</li>\n" +
             "                <li><span>CHEST</span>$chest cm</li>\n" +

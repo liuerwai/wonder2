@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/video.min.js"></script>
     <script src="assets/html5media.min.js"></script>
+    <!-- jquery -->
+    <script src="assets/jquery.js"></script>
+    <script src="js/home.js"></script>
 </head>
 
 <body>
@@ -391,9 +394,6 @@ We using unique connections and industry knowledge to develop and nurture models
 </div>
 
 
-<!-- jquery -->
-<script src="assets/jquery.js"></script>
-
 <!-- wow script -->
 <script src="assets/wow/wow.min.js"></script>
 
@@ -412,18 +412,18 @@ We using unique connections and industry knowledge to develop and nurture models
 <script src="assets/script.js"></script>
 
 <script type="text/javascript">
-    $(function () {
-        $("a[name=imgView]").click(function () {
-
-            $("a[name=imgView]").each(function () {
-                $(this).removeAttr("data-gallery");
-                $(this).siblings("a").removeAttr("data-gallery");
-            });
-
-            $(this).attr("data-gallery", "");
-            $(this).siblings("a").attr("data-gallery", "");
-        });
-    });
+//    $(function () {
+//        $("a[name=imgView]").click(function () {
+//
+//            $("a[name=imgView]").each(function () {
+//                $(this).removeAttr("data-gallery");
+//                $(this).siblings("a").removeAttr("data-gallery");
+//            });
+//
+//            $(this).attr("data-gallery", "");
+//            $(this).siblings("a").attr("data-gallery", "");
+//        });
+//    });
 </script>
 
 </body>
