@@ -5,6 +5,7 @@ import com.liuxg.wonder.constant.UploadType;
 import com.liuxg.wonder.html.DetailPage;
 import com.liuxg.wonder.html.HomePage;
 import com.liuxg.wonder.html.ManagerPage;
+import com.liuxg.wonder.html.TalentreetDetailPage;
 import com.liuxg.wonder.po.DetailPagePo;
 import com.liuxg.wonder.po.Model;
 import com.liuxg.wonder.service.IModelService;
@@ -58,6 +59,20 @@ public class Controller {
         detailPagePo.setOpus(DetailPage.getOpusImagehtml(model));
         detailPagePo.setMakeup(DetailPage.getMakeUpImageHtml(model));
         detailPagePo.setVideo(DetailPage.getVideoHtml(model));
+        return detailPagePo;
+    }
+
+    @RequestMapping("queryDetailTal")
+    @ResponseBody
+    public DetailPagePo queryDetailTal(String l, String userId) {
+
+        Model model = modelService.queryOne(userId);
+        DetailPagePo detailPagePo = new DetailPagePo();
+        detailPagePo.setPeopleInfo(TalentreetDetailPage.getPeopleInfoHtml(model, l));
+        detailPagePo.setTabTitle(TalentreetDetailPage.getTabTitleHtml(model, l));
+        detailPagePo.setOpus(TalentreetDetailPage.getOpusImagehtml(model));
+        detailPagePo.setMakeup(TalentreetDetailPage.getMakeUpImageHtml(model));
+        detailPagePo.setVideo(TalentreetDetailPage.getVideoHtml(model));
         return detailPagePo;
     }
 
