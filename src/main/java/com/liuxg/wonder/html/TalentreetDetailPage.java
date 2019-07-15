@@ -8,47 +8,61 @@ public class TalentreetDetailPage {
     public static final String no_album = "images/no_album.jpg";
 
     public static final String peopleInfoCn = "" +
-            "        <div id=\"name\">\n" +
-            "            <span class=\"name\">$name</span>\n" +
-            "        </div>\n" +
-            "        <div id=\"image\">\n" +
-            "            <img style=\"width: 60%; height: auto;\" src=\"$peoImg\">\n" +
-            "        </div>\n" +
-            "        <div id=\"data\" style=\"margin: 15px;\">\n" +
-            "            <div style=\"width: 350px; height: 350px;\">\n" +
-            "                <li><span>生日</span>$birth</li>\n" +
-            "                <li><span>身高</span>$height cm</li>\n" +
-            "                <li><span>胸围</span>$chest cm</li>\n" +
-            "                <li><span>腰围</span>$waist cm</li>\n" +
-            "                <li><span>臀围</span>$hips cm</li>\n" +
-            "                <li><span>鞋码</span>$shoesSize</li>\n" +
-            "                <li><span>眼睛眼色</span>$eyeColor</li>\n" +
-            "                <li><span>发色</span>$hairColor</li>\n" +
-            "                <li><span>肤色</span>$skinColor</li>\n" +
-            "            </div>\n" +
-            "        </div>";
+            "<div class=\"bd\">\n" +
+            "        <ul style=\"display: block;\">\n" +
+            "            <li><i>Gender</i><b>$six</b></li>\n" +
+            "            <li><i>身高</i><b>$height cm</b></li>\n" +
+            "            <li><i>胸围</i><b>$chest cm</b></li>\n" +
+            "            <li><i>腰围</i><b>$waist cm</b></li>\n" +
+            "            <li><i>臀围</i><b>$hips cm</b></li>\n" +
+            "            <li><i>鞋码</i><b>$shoesSize</b></li>\n" +
+            "            <li><i>肤色</i><b>$waist</b></li>\n" +
+            "            <li><i>眼睛眼色</i><b>$eyeColor</b></li>\n" +
+            "            <li><i>发色</i><b>$hairColor</b></li>\n" +
+            "            <li><i>纹身</i><b>无</b></li>\n" +
+            "        </ul>\n" +
+            "        <ul style=\"display: none;\">\n" +
+            "            <li><i>Gender</i><b>$six</b></li>\n" +
+            "            <li><i>身高</i><b>$height\"</b></li>\n" +
+            "            <li><i>胸围</i><b>$chest\"</b></li>\n" +
+            "            <li><i>腰围</i><b>$waist\"</b></li>\n" +
+            "            <li><i>臀围</i><b>$hips\"</b></li>\n" +
+            "            <li><i>鞋码</i><b>$shoesSize</b></li>\n" +
+            "            <li><i>肤色</i><b>$skinColor</b></li>\n" +
+            "            <li><i>眼睛眼色</i><b>$eyeColor</b></li>\n" +
+            "            <li><i>发色</i><b>$hairColor</b></li>\n" +
+            "            <li><i>纹身</i><b>无</b></li>\n" +
+            "        </ul>\n" +
+            "    </div>";
 
 
     public static final String peopleInfoEn = "" +
-            "        <div id=\"name\">\n" +
-            "            <span class=\"name\">$name</span>\n" +
-            "        </div>\n" +
-            "        <div id=\"image\">\n" +
-            "            <img style=\"width: 60%; height: auto;\" src=\"$peoImg\">\n" +
-            "        </div>\n" +
-            "        <div id=\"data\" style=\"margin: 15px;\">\n" +
-            "            <div style=\"width: 350px; height: 350px;\">\n" +
-            "                <li><span>BIRTHDAY</span>$birth</li>\n" +
-            "                <li><span>HEIHT</span>$height cm</li>\n" +
-            "                <li><span>CHEST</span>$chest cm</li>\n" +
-            "                <li><span>WAIST</span>$waist cm</li>\n" +
-            "                <li><span>HIPS</span>$hips cm</li>\n" +
-            "                <li><span>SHOSESIZE</span>$shoesSize</li>\n" +
-            "                <li><span>EYECOLOR</span>$eyeColor</li>\n" +
-            "                <li><span>HAIRCOLOR</span>$hairColor</li>\n" +
-            "                <li><span>SKINCOLOR</span>$skinColor</li>\n" +
-            "            </div>\n" +
-            "        </div>";
+            "<div class=\"bd\">\n" +
+            "        <ul style=\"display: block;\">\n" +
+            "            <li><i>Gender</i><b>$six</b></li>\n" +
+            "            <li><i>HEIGHT</i><b>$height cm</b></li>\n" +
+            "            <li><i>CHEST</i><b>$chest cm</b></li>\n" +
+            "            <li><i>WAIST</i><b>$waist cm</b></li>\n" +
+            "            <li><i>HIPS</i><b>$hips cm</b></li>\n" +
+            "            <li><i>SHOE SIZE</i><b>$shoesSize</b></li>\n" +
+            "            <li><i>SKIN COLOR</i><b>$skinColor</b></li>\n" +
+            "            <li><i>EYE COLOR</i><b>$eyeColor</b></li>\n" +
+            "            <li><i>HAIR COLOR</i><b>$hairColor</b></li>\n" +
+            "            <li><i>TATTOO</i><b>none</b></li>\n" +
+            "        </ul>\n" +
+            "        <ul style=\"display: none;\">\n" +
+            "            <li><i>Gender</i><b>$six</b></li>\n" +
+            "            <li><i>HEIGHT</i><b>$height\"</b></li>\n" +
+            "            <li><i>CHEST</i><b>$chest\"</b></li>\n" +
+            "            <li><i>WAIST</i><b>$waist\"</b></li>\n" +
+            "            <li><i>HIPS</i><b>$hips\"</b></li>\n" +
+            "            <li><i>SHOE SIZE</i><b>$shoesSize</b></li>\n" +
+            "            <li><i>SKIN COLOR</i><b>$skinColor</b></li>\n" +
+            "            <li><i>EYE COLOR</i><b>$eyeColor</b></li>\n" +
+            "            <li><i>HAIR COLOR</i><b>$hairColor</b></li>\n" +
+            "            <li><i>TATTOO</i><b>none</b></li>\n" +
+            "        </ul>\n" +
+            "    </div>";
 
     public static String getPeopleInfoHtml(Model model, String l) {
         String html = "cn".equals(l) ? peopleInfoCn : peopleInfoEn;
