@@ -19,7 +19,7 @@ $(document).ready(function () {
     //查询模特
     function queryMotels() {
         var theRequest = GetRequest();
-        var l = 'cn';
+        var l = 'en';
         var modelsHtml = $.ajax({url: "queryModels?l=" + l, async: false});
         $("#model").html(modelsHtml.responseText);
     }

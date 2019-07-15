@@ -1,14 +1,6 @@
 $(document).ready(function () {
 
-    changeLaunage();
     queryDetail();
-
-    // 切换至汉语
-    function toChinese() {
-        $("#aHome").attr("href", "home.html?l=cn");
-        $("#aHome2").attr("href", "home.html?l=cn");
-        $("#aHome").text("主页");
-    }
 
     //获取参数
     function GetRequest() {
@@ -24,19 +16,12 @@ $(document).ready(function () {
         return theRequest;
     }
 
-    //语言切换
-    function changeLaunage() {
-        var theRequest = GetRequest();
-        if (theRequest.l == 'cn') {
-            toChinese();
-        }
-    }
 
     //查询模特
     function queryDetail() {
         var theRequest = GetRequest();
         var userId = theRequest.userId;
-        var l = theRequest.l == 'cn' ? 'cn' : 'en';
+        var l = theRequest.l == 'cn';
         $.ajax({
             url: "queryDetailTal?userId=" + userId + "&l=" + l,
             async: false,

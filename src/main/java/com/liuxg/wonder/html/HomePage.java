@@ -14,7 +14,7 @@ public class HomePage {
             "                    Waist/$waist<br/>\n" +
             "                    Hips/$hips<br/>\n" +
 //            "                    <a href=\"detail.html?userId=$id&l=$l\" name=\"imgView\">View more</a>\n" +
-            "                    <a href=\"2300.html?userId=$id&l=$l\" name=\"imgView\">View more</a>\n" +
+            "                    <a href=\"2300en.html?userId=$id&l=$l\" name=\"imgView\">View more</a>\n" +
             "                </p>\n" +
             "            </figcaption>\n" +
             "    </figure>\n";

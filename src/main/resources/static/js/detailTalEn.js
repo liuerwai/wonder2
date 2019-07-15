@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    queryMotels();
+    queryDetail();
 
     //获取参数
     function GetRequest() {
@@ -17,11 +17,22 @@ $(document).ready(function () {
     }
 
     //查询模特
-    function queryMotels() {
+    function queryDetail() {
         var theRequest = GetRequest();
-        var l = 'cn';
-        var modelsHtml = $.ajax({url: "queryModels?l=" + l, async: false});
-        $("#model").html(modelsHtml.responseText);
+        var userId = theRequest.userId;
+        var l =  'en';
+        $.ajax({
+            url: "queryDetailTal?userId=" + userId + "&l=" + l,
+            async: false,
+            success: function (data) {
+                $("#peopleInfo").html(data.peopleInfo);
+                $("#tab-title").html(data.tabTitle);
+                $("#opus-content").html(data.opus);
+                $("#makeup").html(data.makeup);
+                $("#video-content").html(data.video);
+            },
+        });
+
     }
 
 });
