@@ -177,4 +177,9 @@ public class TalentreetDetailPage {
         return "cn".equals(l) ? "男" : "MEN";
     }
 
+    public String getBumsHtml(Model model){
+
+        return "";
+    }
+
 }
