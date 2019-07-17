@@ -71,6 +71,7 @@ public class Controller {
         DetailPageTalPo detailPagePo = new DetailPageTalPo();
         detailPagePo.setPeopleInfo(TalentreetDetailPage.getPeopleInfoHtml(model, l));
         detailPagePo.setBumss(TalentreetDetailPage.getBumssHtmlCn(model));
+        detailPagePo.setImageBox(TalentreetDetailPage.getImageBoxHtml(model, ""));
         return detailPagePo;
     }
 

@@ -28,7 +28,7 @@ $(document).ready(function () {
             success: function (data) {
                 $("#peopleInfo").html(data.peopleInfo);
                 $("#bumss").html(data.bumss);
-                $("#opus-content").html(data.opus);
+                $("#img_box").html(data.imageBox);
                 $("#makeup").html(data.makeup);
                 $("#video-content").html(data.video);
             },

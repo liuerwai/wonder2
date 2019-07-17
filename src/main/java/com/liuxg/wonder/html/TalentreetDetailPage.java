@@ -1,6 +1,7 @@
 package com.liuxg.wonder.html;
 
 import com.liuxg.wonder.po.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 public class TalentreetDetailPage {
@@ -206,6 +207,38 @@ public class TalentreetDetailPage {
         html += htmlEnd;
 
         return html;
+    }
+
+    public static String getImageBoxHtml(Model model, String type){
+
+        String startHtml = "" +
+                "          <ul>\n";
+
+        String itemHtml =  "<li><a href=\"javascript:void(0);\"><img bigpic=\"$bigpic\" src=\"$smallPic\" height=\"308.447619047619\" style=\"margin-top: -37.7238px; width: 233px; display: block;\"></a></li>\n";
+
+
+        String endHtml = " </ul>\n" +
+                "          <div class=\"clear\"></div>\n" ;
+
+        String html = "" + startHtml;
+
+        if (!CollectionUtils.isEmpty(model.getOpus())) {
+            for(String value : model.getOpus().values()){
+                html += itemHtml.replace("$bigpic", value)
+                        .replace("$smallPic", value);
+            }
+
+        }
+        if (!CollectionUtils.isEmpty(model.getMakeup())) {
+            for(String value : model.getMakeup().values()){
+                html += itemHtml.replace("$bigpic", value)
+                        .replace("$smallPic", value);
+            }
+        }
+        html += endHtml;
+
+        return html;
+
     }
 
 }

@@ -4,6 +4,7 @@ public class DetailPageTalPo {
 
     private String peopleInfo;
     private String bumss;
+    private String imageBox;
 
     public String getPeopleInfo() {
         return peopleInfo;
@@ -19,5 +20,13 @@ public class DetailPageTalPo {
 
     public void setBumss(String bumss) {
         this.bumss = bumss;
+    }
+
+    public String getImageBox() {
+        return imageBox;
+    }
+
+    public void setImageBox(String imageBox) {
+        this.imageBox = imageBox;
     }
 }
