@@ -27,7 +27,7 @@ $(document).ready(function () {
             async: false,
             success: function (data) {
                 $("#peopleInfo").html(data.peopleInfo);
-                $("#tab-title").html(data.tabTitle);
+                $("#bumss").html(data.bumss);
                 $("#opus-content").html(data.opus);
                 $("#makeup").html(data.makeup);
                 $("#video-content").html(data.video);

@@ -177,9 +177,35 @@ public class TalentreetDetailPage {
         return "cn".equals(l) ? "男" : "MEN";
     }
 
-    public String getBumsHtml(Model model){
+    public static String getBumssHtmlCn(Model model) {
 
-        return "";
+        String htmlStart = "" +
+                "<div class=\"bd bumss\">\n" +
+                "     <ul>\n";
+        String htmlEnd =
+                "     </ul>\n" +
+                        " </div>";
+
+        String itemHtml = "<li><a href=\"/Index/talent_album/id/5326/mid/2300.html\"><img id=\"btn1\" src=\"$title\" onerror=\"src='images/no_album.jpg'\" style=\"display: block; margin-top: -43px; width: 174px;\" height=\"260\"></a>\n" +
+                "                                    <h2 style=\"font-weight: bold;\">作品照</h2></li>";
+
+        String html = "" + htmlStart;
+
+        if (model.getOpusTitle() != null && model.getOpusTitle() != no_album) {
+            html += itemHtml.replace("$title", model.getOpusTitle())
+                    .replace("$name", "工作照");
+        }
+        if (model.getMakeupTitle() != null && model.getMakeupTitle() != no_album) {
+            html += itemHtml.replace("$title", model.getMakeupTitle())
+                    .replace("$name", "素颜照");
+        }
+        if (model.getVideioTite() != null && model.getVideioTite() != no_album) {
+            html += itemHtml.replace("$title", model.getVideioTite())
+                    .replace("$name", "视频");
+        }
+        html += htmlEnd;
+
+        return html;
     }
 
 }

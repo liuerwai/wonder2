@@ -7,6 +7,7 @@ import com.liuxg.wonder.html.HomePage;
 import com.liuxg.wonder.html.ManagerPage;
 import com.liuxg.wonder.html.TalentreetDetailPage;
 import com.liuxg.wonder.po.DetailPagePo;
+import com.liuxg.wonder.po.DetailPageTalPo;
 import com.liuxg.wonder.po.Model;
 import com.liuxg.wonder.service.IModelService;
 import com.liuxg.wonder.util.FileUtils;
@@ -64,15 +65,12 @@ public class Controller {
 
     @RequestMapping("queryDetailTal")
     @ResponseBody
-    public DetailPagePo queryDetailTal(String l, String userId) {
+    public DetailPageTalPo queryDetailTal(String l, String userId) {
 
         Model model = modelService.queryOne(userId);
-        DetailPagePo detailPagePo = new DetailPagePo();
+        DetailPageTalPo detailPagePo = new DetailPageTalPo();
         detailPagePo.setPeopleInfo(TalentreetDetailPage.getPeopleInfoHtml(model, l));
-        detailPagePo.setTabTitle(TalentreetDetailPage.getTabTitleHtml(model, l));
-        detailPagePo.setOpus(TalentreetDetailPage.getOpusImagehtml(model));
-        detailPagePo.setMakeup(TalentreetDetailPage.getMakeUpImageHtml(model));
-        detailPagePo.setVideo(TalentreetDetailPage.getVideoHtml(model));
+        detailPagePo.setBumss(TalentreetDetailPage.getBumssHtmlCn(model));
         return detailPagePo;
     }
 
