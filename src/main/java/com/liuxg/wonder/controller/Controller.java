@@ -65,13 +65,14 @@ public class Controller {
 
     @RequestMapping("queryDetailTal")
     @ResponseBody
-    public DetailPageTalPo queryDetailTal(String l, String userId) {
+    public DetailPageTalPo queryDetailTal(String l, String userId, String type) {
 
         Model model = modelService.queryOne(userId);
         DetailPageTalPo detailPagePo = new DetailPageTalPo();
         detailPagePo.setPeopleInfo(TalentreetDetailPage.getPeopleInfoHtml(model, l));
         detailPagePo.setBumss(TalentreetDetailPage.getBumssHtmlCn(model));
-        detailPagePo.setImageBox(TalentreetDetailPage.getImageBoxHtml(model, ""));
+        detailPagePo.setImageBox(TalentreetDetailPage.getImageBoxHtml(model, type));
+        detailPagePo.setHeadImage(TalentreetDetailPage.getHeadHtml(model));
         return detailPagePo;
     }
 

@@ -5,6 +5,7 @@ public class DetailPageTalPo {
     private String peopleInfo;
     private String bumss;
     private String imageBox;
+    private String headImage;
 
     public String getPeopleInfo() {
         return peopleInfo;
@@ -28,5 +29,13 @@ public class DetailPageTalPo {
 
     public void setImageBox(String imageBox) {
         this.imageBox = imageBox;
+    }
+
+    public String getHeadImage() {
+        return headImage;
+    }
+
+    public void setHeadImage(String headImage) {
+        this.headImage = headImage;
     }
 }

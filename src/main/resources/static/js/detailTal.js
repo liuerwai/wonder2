@@ -21,15 +21,16 @@ $(document).ready(function () {
     function queryDetail() {
         var theRequest = GetRequest();
         var userId = theRequest.userId;
+        var type = theRequest.type;
         var l = theRequest.l == 'cn';
         $.ajax({
-            url: "queryDetailTal?userId=" + userId + "&l=" + l,
+            url: "queryDetailTal?userId=" + userId + "&l=" + l + "&type=" + type,
             async: false,
             success: function (data) {
                 $("#peopleInfo").html(data.peopleInfo);
                 $("#bumss").html(data.bumss);
                 $("#img_box").html(data.imageBox);
-                $("#makeup").html(data.makeup);
+                $("#headImage").html(data.headImage);
                 $("#video-content").html(data.video);
             },
         });

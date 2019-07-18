@@ -22,7 +22,7 @@ $(document).ready(function () {
         var userId = theRequest.userId;
         var l =  'en';
         $.ajax({
-            url: "queryDetailTal?userId=" + userId + "&l=" + l,
+            url: "queryDetailTal?userId=" + userId + "&l=" + l + "&type=" + type,
             async: false,
             success: function (data) {
                 $("#peopleInfo").html(data.peopleInfo);

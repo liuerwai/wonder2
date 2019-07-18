@@ -6,6 +6,12 @@ import org.springframework.util.StringUtils;
 
 public class TalentreetDetailPage {
 
+    public static final String work = "work";
+
+    public static final String make_up = "make_up";
+
+    public static final String video = "video";
+
     public static final String no_album = "images/no_album.jpg";
 
     public static final String peopleInfoCn = "" +
@@ -187,50 +193,56 @@ public class TalentreetDetailPage {
                 "     </ul>\n" +
                         " </div>";
 
-        String itemHtml = "<li><a href=\"/Index/talent_album/id/5326/mid/2300.html\"><img id=\"btn1\" src=\"$title\" onerror=\"src='images/no_album.jpg'\" style=\"display: block; margin-top: -43px; width: 174px;\" height=\"260\"></a>\n" +
+        String itemHtml = "<li><a href=\"detailTal.html?type=$type&userId=$userId\"><img id=\"btn1\" src=\"$title\" onerror=\"src='images/no_album.jpg'\" style=\"display: block; margin-top: -43px; width: 174px;\" height=\"260\"></a>\n" +
                 "                                    <h2 style=\"font-weight: bold;\">作品照</h2></li>";
 
         String html = "" + htmlStart;
 
         if (model.getOpusTitle() != null && model.getOpusTitle() != no_album) {
             html += itemHtml.replace("$title", model.getOpusTitle())
-                    .replace("$name", "工作照");
+                    .replace("$name", "工作照")
+                    .replace("$type", work)
+                    .replace("$userId", model.getId());
         }
         if (model.getMakeupTitle() != null && model.getMakeupTitle() != no_album) {
             html += itemHtml.replace("$title", model.getMakeupTitle())
-                    .replace("$name", "素颜照");
+                    .replace("$name", "素颜照")
+                    .replace("$type", make_up)
+                    .replace("$userId", model.getId());
         }
         if (model.getVideioTite() != null && model.getVideioTite() != no_album) {
             html += itemHtml.replace("$title", model.getVideioTite())
-                    .replace("$name", "视频");
+                    .replace("$name", "视频")
+                    .replace("$type", video)
+                    .replace("$userId", model.getId());
         }
         html += htmlEnd;
 
         return html;
     }
 
-    public static String getImageBoxHtml(Model model, String type){
+    public static String getImageBoxHtml(Model model, String type) {
 
         String startHtml = "" +
                 "          <ul>\n";
 
-        String itemHtml =  "<li><a href=\"javascript:void(0);\"><img bigpic=\"$bigpic\" src=\"$smallPic\" height=\"308.447619047619\" style=\"margin-top: -37.7238px; width: 233px; display: block;\"></a></li>\n";
+        String itemHtml = "<li><a href=\"javascript:void(0);\"><img bigpic=\"$bigpic\" src=\"$smallPic\" height=\"308.447619047619\" style=\"margin-top: -37.7238px; width: 233px; display: block;\"></a></li>\n";
 
 
         String endHtml = " </ul>\n" +
-                "          <div class=\"clear\"></div>\n" ;
+                "          <div class=\"clear\"></div>\n";
 
         String html = "" + startHtml;
 
-        if (!CollectionUtils.isEmpty(model.getOpus())) {
-            for(String value : model.getOpus().values()){
+        if (work.equalsIgnoreCase(type) && !CollectionUtils.isEmpty(model.getOpus())) {
+            for (String value : model.getOpus().values()) {
                 html += itemHtml.replace("$bigpic", value)
                         .replace("$smallPic", value);
             }
 
         }
-        if (!CollectionUtils.isEmpty(model.getMakeup())) {
-            for(String value : model.getMakeup().values()){
+        if (make_up.equalsIgnoreCase(type) && !CollectionUtils.isEmpty(model.getMakeup())) {
+            for (String value : model.getMakeup().values()) {
                 html += itemHtml.replace("$bigpic", value)
                         .replace("$smallPic", value);
             }
@@ -239,6 +251,14 @@ public class TalentreetDetailPage {
 
         return html;
 
+    }
+
+    public static String getHeadHtml(Model model){
+
+        String html =
+                "  <a href=\"javascript:void(0);\" class=\"head\"><img src=\"$headImage\" style=\"max-height:100%\"></a>\n";
+
+        return html.replace("$headImage", model.getOpusTitle());
     }
 
 }
