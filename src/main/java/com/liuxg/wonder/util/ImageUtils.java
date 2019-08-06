@@ -1,5 +1,7 @@
 package com.liuxg.wonder.util;
 
+import com.liuxg.wonder.constant.Properties;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -39,7 +41,7 @@ public class ImageUtils {
     }
 
     /**
-     * 压缩图片
+     * 压缩图片(最大宽度)
      *
      * @throws Exception
      */
@@ -58,6 +60,26 @@ public class ImageUtils {
     }
 
     /**
+     * 压缩头像图片
+     *
+     * @throws Exception
+     */
+    public static void reduceHeadImg(String file) throws Exception {
+
+        reduceImg(file, Properties.headWidth, Properties.headHight);
+    }
+
+    /**
+     * 压缩作品图片
+     *
+     * @throws Exception
+     */
+    public static void reduceImgForReduce(String file) throws Exception {
+
+        reduceImg(file, Properties.reduceWidth, Properties.reduceHight);
+    }
+
+    /**
      * 压缩图片至固定分辨率  填充空白
      *
      * @param file
@@ -66,7 +88,7 @@ public class ImageUtils {
     public static void reduceImg(String file, int width, int height) throws Exception {
 
         File srcFile = new File(file);
-        File distfile = new File(file.split("\\.")[0] + "redusTo" + file.split("\\.")[1]);
+        File distfile = new File(FileUtils.fileNameAppead(file, "reduesTo"));
         scale(srcFile.getPath(), distfile.getPath(), width, height);
         // 删除原图片
         Files.deleteIfExists(srcFile.toPath());

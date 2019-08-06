@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,8 +84,36 @@ public class FileUtils {
             File destFile = new File(fileName);
             file.transferTo(destFile);
             files.add(fileName);
+            //保存压缩文件
+            String reduceFileName = fileNameAppead(destFile.getPath(), "_reduce_");
+            File reduceFile = new File(reduceFileName);
+            if(reduceFile.exists()){
+                reduceFile.delete();
+            }
+            Files.copy(destFile.toPath(), reduceFile.toPath());
+            files.add(reduceFileName);
+            //保存压缩头像文件
+            String reduceHeadFileName = fileNameAppead(destFile.getPath(), "_head_");
+            File reduceHeadFile = new File(reduceHeadFileName);
+            if(reduceHeadFile.exists()){
+                reduceHeadFile.delete();
+            }
+            Files.copy(destFile.toPath(), reduceHeadFile.toPath());
+            files.add(reduceHeadFileName);
         }
         return files;
+    }
+
+    /**
+     * 文件名加后缀
+     * @param source
+     * @param appead
+     * @return
+     */
+    public static String fileNameAppead(String source, String appead){
+
+        String suffix = FileUtils.getFileSuffix(source);
+        return source.replace(suffix,"") + appead + suffix;
     }
 
     /**

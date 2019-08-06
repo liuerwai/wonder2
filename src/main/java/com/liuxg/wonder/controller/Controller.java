@@ -146,16 +146,27 @@ public class Controller {
             String basePath = UploadType.getBathPath(type, model);
             List<String> files = FileUtils.saveUploadFile(request, basePath);
             for (String file : files) {
-                // 压缩
-                if (UploadType.MAKEUP_TITLE.type.equals(type) ||
-                        UploadType.OPUS_Title.type.equals(type) ||
-                        UploadType.VIDEO_TITLE.type.equals(type)) {
-                    ImageUtils.reduceImg(file, 1500);
-                } else if (UploadType.MAKEUP.type.equals(type) ||
-                        UploadType.OPUS.type.equals(type) ||
-                        UploadType.HOME_IMG.equals(type)) {
-                    ImageUtils.reduceImg(file, 1000);
+                // 压缩图片
+                if(file.contains("_reduce_")) {
+                    ImageUtils.reduceImgForReduce(file);
+                    continue;
                 }
+                // 压缩图片
+                if(file.contains("_head_")) {
+                    ImageUtils.reduceHeadImg(file);
+                    continue;
+                }
+//                // 压缩
+//                if (UploadType.MAKEUP_TITLE.type.equals(type) ||
+//                        UploadType.OPUS_Title.type.equals(type) ||
+//                        UploadType.VIDEO_TITLE.type.equals(type)) {
+//                    ImageUtils.reduceImg(file, 1500);
+//                } else if (UploadType.MAKEUP.type.equals(type) ||
+//                        UploadType.OPUS.type.equals(type) ||
+//                        UploadType.HOME_IMG.equals(type)) {
+//                    ImageUtils.reduceImg(file, 1000);
+//                }
+
                 model.saveWebPath(type, file);
             }
             // 保存web路径
